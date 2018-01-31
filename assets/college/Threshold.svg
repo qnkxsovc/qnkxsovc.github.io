@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="323px" height="162px" viewBox="0 0 323 162" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 7</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-27.000000, -20.000000)">
+        <g id="Group-7" transform="translate(28.000000, 18.000000)">
+            <g id="Group-3" transform="translate(0.000000, 92.000000)">
+                <rect id="Rectangle" stroke="#000000" fill="#FDFDFD" stroke-linecap="square" x="210" y="0" width="105" height="27"></rect>
+                <text id="?" font-family="Euclid-Bold, Euclid" font-size="14" font-weight="bold" fill="#9B9B9B">
+                    <tspan x="259.696" y="17">?</tspan>
+                    <tspan x="266.304" y="17" font-family="Euclid" font-weight="normal"></tspan>
+                </text>
+                <g id="Group-2" transform="translate(105.000000, 0.000000)">
+                    <rect id="Rectangle" stroke="#000000" fill="#FDFDFD" stroke-linecap="square" x="0" y="0" width="105" height="27"></rect>
+                    <text id="ipsum" font-family="Euclid" font-size="20" font-weight="normal" fill="#3385FF">
+                        <tspan x="26.35" y="19">ipsum</tspan>
+                    </text>
+                </g>
+                <g id="Group">
+                    <rect id="Rectangle" stroke="#000000" fill="#FDFDFD" stroke-linecap="square" x="0" y="0" width="105" height="27"></rect>
+                    <text id="lorem" font-family="Euclid" font-size="20" font-weight="normal" fill="#66A3FF">
+                        <tspan x="28.03" y="20">lorem</tspan>
+                    </text>
+                </g>
+            </g>
+            <g id="Group-4" transform="translate(0.000000, 44.000000)">
+                <rect id="Rectangle" stroke="#000000" fill="#FDFDFD" stroke-linecap="square" x="210" y="0" width="105" height="27"></rect>
+                <text id="?" font-family="Euclid-Bold, Euclid" font-size="14" font-weight="bold" fill="#9B9B9B">
+                    <tspan x="259.696" y="18">?</tspan>
+                    <tspan x="266.304" y="18" font-family="Euclid" font-weight="normal"></tspan>
+                </text>
+                <g id="Group-2" transform="translate(105.000000, 0.000000)">
+                    <rect id="Rectangle" stroke="#000000" fill="#FDFDFD" stroke-linecap="square" x="0" y="0" width="105" height="27"></rect>
+                    <text id="ipsum" font-family="Euclid" font-size="20" font-weight="normal" fill="#3385FF">
+                        <tspan x="26.35" y="19">ipsum</tspan>
+                    </text>
+                </g>
+                <g id="Group">
+                    <rect id="Rectangle" stroke="#000000" fill="#FDFDFD" stroke-linecap="square" x="0" y="0" width="105" height="27"></rect>
+                    <text id="lorem" font-family="Euclid" font-size="20" font-weight="normal" fill="#66A3FF">
+                        <tspan x="28.03" y="20">lorem</tspan>
+                    </text>
+                </g>
+            </g>
+            <rect id="Rectangle-3" stroke="#9B9B9B" stroke-width="2" stroke-linecap="square" stroke-dasharray="3,3,3,3" x="204" y="37" width="117" height="90" rx="8"></rect>
+            <g id="Group-5" transform="translate(1.000000, 0.000000)">
+                <path d="M262.999199,31 C263.046766,24.6131974 260.97494,20.6598414 256.783722,19.139932 C252.592504,17.6200227 239.99793,17.6200227 219,19.139932" id="Line" stroke="#D0021B" stroke-linecap="square"></path>
+                <path id="Line-decoration-1" d="M229.555233,15.3680556 L219,19.139932 L229.988403,21.3523989" stroke="#D0021B" stroke-linecap="square"></path>
+                <text id="If-the-last-items-ar" font-family="Euclid" font-size="14" font-weight="normal">
+                    <tspan x="0" y="13" fill="#000000">If the last items are </tspan>
+                    <tspan x="125.356" y="13" fill="#D0021B">unequal</tspan>
+                    <tspan x="173.166" y="13" fill="#000000">, the </tspan>
+                    <tspan x="0" y="30" fill="#000000">fingerprints don’t match</tspan>
+                </text>
+            </g>
+            <g id="Group-6" transform="translate(0.000000, 131.000000)">
+                <text id="If-the-last-items-ar" font-family="Euclid" font-size="14" font-weight="normal">
+                    <tspan x="0" y="13" fill="#000000">If the last items are </tspan>
+                    <tspan x="125.356" y="13" fill="#7ED321">equal</tspan>
+                    <tspan x="157.626" y="13" fill="#000000">, the </tspan>
+                    <tspan x="0" y="30" fill="#000000">length is actually at the threshold</tspan>
+                </text>
+                <path d="M264.027003,1.10541869 C264.096122,6.63645896 262.310499,10.4346527 258.670135,12.5 C255.029771,14.5653473 241.806392,14.5653473 219,12.5" id="Line-2" stroke="#7ED321" stroke-linecap="square"></path>
+                <path id="Line-2-decoration-1" d="M230.026557,10.4862887 L219,12.5 L229.485412,16.4618356" stroke="#7ED321" stroke-linecap="square"></path>
+            </g>
+        </g>
+    </g>
+</svg>

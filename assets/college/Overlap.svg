@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="428px" height="126px" viewBox="0 0 428 126" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 10</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard-5" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-21.000000, -22.000000)">
+        <g id="Group-10" transform="translate(23.000000, 24.000000)">
+            <g id="Group-9">
+                <g id="Group-7" transform="translate(116.000000, 53.000000)">
+                    <g id="Group-3">
+                        <rect id="Rectangle" stroke="#000000" fill="#FDFDFD" stroke-linecap="square" x="0" y="0" width="105" height="27"></rect>
+                        <text id="dolor" font-family="Euclid" font-size="20" font-weight="normal" fill="#0066FF">
+                            <tspan x="30.25" y="19">dolor</tspan>
+                        </text>
+                    </g>
+                    <g id="Group-4" transform="translate(105.000000, 0.000000)">
+                        <rect id="Rectangle" stroke="#000000" fill="#FDFDFD" stroke-linecap="square" x="0" y="0" width="105" height="27"></rect>
+                        <text id="sit" font-family="Euclid" font-size="20" font-weight="normal" fill="#0052CC">
+                            <tspan x="42.39" y="20">sit</tspan>
+                        </text>
+                    </g>
+                </g>
+                <g id="Group-8" transform="translate(116.000000, 5.000000)">
+                    <g id="Group-3">
+                        <rect id="Rectangle" stroke="#000000" fill="#FDFDFD" stroke-linecap="square" x="0" y="0" width="105" height="27"></rect>
+                        <text id="dolor" font-family="Euclid" font-size="20" font-weight="normal" fill="#0066FF">
+                            <tspan x="30.25" y="19">dolor</tspan>
+                        </text>
+                    </g>
+                    <g id="Group-4" transform="translate(105.000000, 0.000000)">
+                        <rect id="Rectangle" stroke="#000000" fill="#FDFDFD" stroke-linecap="square" x="0" y="0" width="105" height="27"></rect>
+                        <text id="sit" font-family="Euclid" font-size="20" font-weight="normal" fill="#0052CC">
+                            <tspan x="42.39" y="20">sit</tspan>
+                        </text>
+                    </g>
+                </g>
+                <g id="Group-6" transform="translate(5.000000, 11.000000)">
+                    <g id="Group">
+                        <rect id="Rectangle" stroke="#000000" fill="#FDFDFD" stroke-linecap="square" x="0" y="0" width="105" height="27"></rect>
+                        <text id="lorem" font-family="Euclid" font-size="20" font-weight="normal" fill="#66A3FF">
+                            <tspan x="28.03" y="20">lorem</tspan>
+                        </text>
+                    </g>
+                    <g id="Group-2" transform="translate(105.000000, 0.000000)">
+                        <rect id="Rectangle" stroke="#000000" fill="#FDFDFD" stroke-linecap="square" x="0" y="0" width="105" height="27"></rect>
+                        <text id="ipsum" font-family="Euclid" font-size="20" font-weight="normal" fill="#3385FF">
+                            <tspan x="26.35" y="19">ipsum</tspan>
+                        </text>
+                    </g>
+                    <g id="Group-3" transform="translate(210.000000, 0.000000)">
+                        <rect id="Rectangle" stroke="#000000" fill="#FDFDFD" stroke-linecap="square" x="0" y="0" width="105" height="27"></rect>
+                        <text id="dolor" font-family="Euclid" font-size="20" font-weight="normal" fill="#0066FF">
+                            <tspan x="30.25" y="19">dolor</tspan>
+                        </text>
+                    </g>
+                </g>
+                <g id="Group-5" transform="translate(110.000000, 59.000000)">
+                    <g id="Group-2">
+                        <rect id="Rectangle" stroke="#000000" fill="#FDFDFD" stroke-linecap="square" x="0" y="0" width="105" height="27"></rect>
+                        <text id="ipsum" font-family="Euclid" font-size="20" font-weight="normal" fill="#3385FF">
+                            <tspan x="26.35" y="19">ipsum</tspan>
+                        </text>
+                    </g>
+                    <g id="Group-3" transform="translate(105.000000, 0.000000)">
+                        <rect id="Rectangle" stroke="#000000" fill="#FDFDFD" stroke-linecap="square" x="0" y="0" width="105" height="27"></rect>
+                        <text id="dolor" font-family="Euclid" font-size="20" font-weight="normal" fill="#0066FF">
+                            <tspan x="30.25" y="19">dolor</tspan>
+                        </text>
+                    </g>
+                    <g id="Group-4" transform="translate(210.000000, 0.000000)">
+                        <rect id="Rectangle" stroke="#000000" fill="#FDFDFD" stroke-linecap="square" x="0" y="0" width="105" height="27"></rect>
+                        <text id="sit" font-family="Euclid" font-size="20" font-weight="normal" fill="#0052CC">
+                            <tspan x="42.39" y="20">sit</tspan>
+                        </text>
+                    </g>
+                </g>
+                <rect id="Rectangle-5" stroke="#9B9B9B" stroke-width="2" stroke-linecap="square" stroke-dasharray="3,3,3,3" x="0" y="7" width="115" height="39" rx="8"></rect>
+                <rect id="Rectangle-5" stroke="#9B9B9B" stroke-width="2" stroke-linecap="square" stroke-dasharray="3,3,3,3" x="105" y="0" width="226" height="92" rx="8"></rect>
+                <text id="i-=-1,-n-=-3" font-family="Euclid" font-size="14" font-weight="normal" fill="#000000">
+                    <tspan x="14" y="79">i = 1, n = 3</tspan>
+                </text>
+            </g>
+            <text id="Overlap-has-size-n-−" font-family="Euclid" font-size="14" font-weight="normal" fill="#000000">
+                <tspan x="136" y="120">Overlap has size n </tspan>
+                <tspan x="252.816" y="120" font-family="Times-Roman, Times">− i = 2</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
