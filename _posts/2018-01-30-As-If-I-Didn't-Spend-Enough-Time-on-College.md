@@ -3,6 +3,8 @@
   title: As If I Didn't Spend Enough Time on College
   tags: 
   categories: 
+  addjs:
+  - js/CollegeGraph.js
 ---
 # Introduction
 
@@ -10,11 +12,13 @@ I applied to 13 colleges across the United States with a focus on engineering an
 
 The graphs below have nodes representing prompts for different essays and edges that indicate that the prompts' responses share seven or more five word phrases (5-grams). Thus, groups of connected nodes indicate groups of similar prompts, and the largest groups correspond to the prompts that were, in my case, the most reusable.
 
-The four main sections of the graph are below:
-- Extracurriculars
-- Motivations 
-- Miscellaneous reusable
-- Miscellaneous non-reusable
+You can interact with the graph below:
+
+<div id="CollegeGraph" style="height: 700px; border: 1px solid black; margin: 20px;">
+    <div class="vis-network" style="position: relative; overflow: hidden; touch-action: pan-y; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); height: 100%; width: 100%;" tabindex="900">
+        <canvas height="800" style="position: relative; touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"/>
+    </div>
+</div>
 
 I also wanted to calculate adjusted word count measurement that would account for essay reuse, but just because I was curious about how many words _original_ words I actually wrote for my applications. I expected this to be a quick detour, but this also had some interesting snags to sort through.
 
@@ -403,6 +407,8 @@ The only difference between the image below and the output from Graphviz is that
 ## TWEET
 
 By inspecting the graph, there are two obviously "very important" essay groups. The first is composed of prompts related to an extracurricular activity of choice, and the similarity between the prompts is obvious. The second is composed of essays that all relate to a student's academic experience, with a focus on explanations of why that student would want to attend the college. There are also some smaller groups of two to three prompts along with tons of single prompts, which I won't list here.
+
+### Choosing N
 
 As mentioned above, one step in the generation of that graph is grouping essays that share seven or more 5-grams:
 ```python

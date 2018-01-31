@@ -17,4 +17,11 @@
 
   </body>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
+  {% for js in page.addjs %}
+       <script type="text/javascript">
+       {% include {{ js }} %}
+       </script>
+   {% endfor %}
+ 
 </html>
