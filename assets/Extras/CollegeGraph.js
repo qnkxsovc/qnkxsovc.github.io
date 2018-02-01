@@ -87,3 +87,5 @@ $('.owl-carousel').owlCarousel({
     nav:true,
     items:1
 });
+
+$(".owl-stage-outer").css("border", "1px solid black");
