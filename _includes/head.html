@@ -10,7 +10,7 @@
     {% include google-analytics.html %}
   {% endif %}
 
-  {% if page.addjs %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.15.0/vis.min.js" type="text/javascript"></script><link rel="https://cdnjs.cloudflare.com/ajax/libs/vis/4.15.0/vis.min.css"></link>
-  {% endif %}
+  {% for f in page.addcss %}
+       <link rel="stylesheet" href="{{ f }}"></link>
+  {% endfor %}
 </head>

@@ -34,10 +34,7 @@ nodes: {
     face: 'Euclid',
     size: 24
   },
-  shape: "box",
-  color: {
-  	color: "#ffffff"
-  }
+  shape: "box"
 },
 edges: {
   width: 0.15,
@@ -83,3 +80,10 @@ var moveOptions = {
 
 network.moveTo(moveOptions); // zoom to fit
 }
+
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    items:1
+});

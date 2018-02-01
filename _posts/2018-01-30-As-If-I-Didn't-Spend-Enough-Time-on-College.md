@@ -4,7 +4,14 @@
   tags: 
   categories: 
   addjs:
-  - js/CollegeGraph.js
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    - https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js
+    - https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js
+    - /assets/Extras/CollegeGraph.js
+  addcss:
+    - https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css
+    - https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css
+    - https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css
 ---
 ## Introduction
 
@@ -406,7 +413,14 @@ dot.render("Colleges.gv")
 
 
 The graph at the beginning of the essay is entertaining, but not actually very readable. I've organized and separated the Graphviz output into the images below:
-![](/assets/college/Graph.png){: .center-image }
+
+<div class="owl-carousel owl-theme">
+    <div class="item"><img src="/assets/college/GraphSections/Academics.svg" alt="Academics prompts."/></div>
+    <div class="item"><img src="/assets/college/GraphSections/ECs.svg" alt="Extracurriculars prompts."/></div>
+    <div class="item"><img src="/assets/college/GraphSections/SmallGroups.svg" alt="Small groups of prompts."/></div>
+    <div class="item"><img src="/assets/college/GraphSections/Individuals.svg" alt="Individual prompts."/></div>
+</div>
+
 
 ## TWEET
 
