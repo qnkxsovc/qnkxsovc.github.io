@@ -15,7 +15,7 @@
 ---
 ## Introduction
 
-I applied to 13 colleges across the United States, with a focus on engineering and technology schools. I spent the largest amount of time writing essays, and I _submitted_ approximately 10,500 words overall. Instead of writing unique essays for every prompt, I tried to reuse as much as possible to make the process more efficient, and now that I've finished I want to know which of my essays were the most "reusable," to gain a better idea of what colleges are generally interested in hearing from their applicants. This information is also relevant to students who are preparing to apply as it may help them decide how to build their resumé or plan their own essays.
+I applied to 13 colleges across the United States, with a focus on engineering and technology schools. I spent the largest amount of time writing essays, and I _submitted_ approximately 10,500 words overall. Instead of writing unique essays for every prompt, I tried to reuse as much as possible to make the process more efficient, and now that I've finished I want to know which of my essays were the most "reusable," to gain a better idea of what colleges are generally interested in hearing from their applicants. This information is also relevant to students who are preparing to apply as it may help them decide how to build their résumé or plan their own essays.
 
 To actually identify reusable essays, I wanted to build and visualize groups of similar essays using a graph. The window below shows nodes representing prompts and edges that indicate that the prompts' responses share _seven or more five-word phrases (5-grams)_. Thus, groups of connected nodes correspond to similar responses, and the largest groups correspond to the essays that were, in my case, the most reusable.
 
@@ -44,13 +44,13 @@ Because of the relatively small amount of text to be considered in this case, I 
 
 ![](/assets/college/Indexing.svg){: .center-image }
 
-Which of these data formats makes it easier to tell which documents share fingerprints?
+Which of these diagrams makes it more obvious where two documents share fingerprints?
 
 ## Implementation
 This is the real meat of the project. I'm going to run through each step and explain what's going on.
 
 ### Preprocessing
-Preprocessing is where the input text data (or _corpus_) gets cleaned before use. Not all of my preprocessing steps are shown here - the processes of exporting my essays to text and consolidating them in a JSON file through regex-fu is omitted on the grounds of boring and esoteric.
+Preprocessing is where the input text data (or _corpus_) gets cleaned before use. Not all of my preprocessing steps are shown here — the processes of exporting my essays to text and consolidating them in a JSON file through regex-fu is omitted on the grounds of boring and esoteric.
 
 Anyways, we start with an array of JSON essay objects with the following members:
 - college: which college is requesting the essay?
@@ -130,7 +130,8 @@ The word count is a bit off because the tokenizer doesn't exactly split strings 
 
 ### Analysis
 
-> This is when the party starts, guys
+> This is when the party starts, guys.
+
 After preprocessing, we can start analyzing the data. In this case, we're going to need to do some work to get the information we're interested in.
 
 #### N-Grams
@@ -154,7 +155,7 @@ print(list(ngrams(3, ["lorem", "ipsum", "dolor", "sit", "amet"])))
     [('lorem', 'ipsum', 'dolor'), ('ipsum', 'dolor', 'sit'), ('dolor', 'sit', 'amet')]
 
 
-This method is pretty, but it's also very compact and difficult to understand at first. I think the most confusing part is the use of Python's zip() method, which is pretty uncommon. Zip() takes an unlimited number of list inputs and returns a ~~list~~ generator whose first element is a tuple of all the first elements of the inputs, whose second element has all the second elements, and so on. The output list ends when the elements of the smallest input list have been exhausted. This process is actually very visually intuitive:
+This method is pretty, but it's also very compact and difficult to understand at first. I think the most confusing part is the use of Python's zip() method, which is pretty uncommon. Zip() takes an unlimited number of list inputs and returns a ~~list~~ generator whose first element is a tuple of all the first elements of the inputs, whose second element has all the second elements, and so on. The output list ends when the elements of the smallest input list have been exhausted. So, the list comprehension in our n-gram generator creates a series of successive token arrays each offset by one from the last, and then zips them. This process is actually very visually intuitive:
 
 ![](/assets/college/Zip.svg){: .center-image }
 
@@ -206,22 +207,22 @@ for essay in essays:
 hash_to_gram = {value: key for key, value in gram_to_hash.items() }
 ```
 
-This is not actually as complicated as it looks. First off, keep track of line 193:
+This is not actually as complicated as it looks. First off, I want to point out line 31:
 ```python
 essays_by_hash[hno].append((essay["id"], idx))
 ```
-Here, for every hash in an essay, we log that essay's id **and** the position where that hash occurs. This will be important later.
+Here, for every 5-gram in an essay, we log that essay's id **and** the position where that hash occurs. This will be important later, but it's easy to forget about later.
 
-The main idea here is generating "hash values" for each of our 5-grams. A _hash_ is a function that takes an input of arbitrary size and maps it to an output of fixed size (the hash value), with possible information loss. Think of using a cookie cutter to make shapes out of dough: you know the exact shape of the dough you take away, at the cost of leaving some of the dough behind.
+The main idea for this block is generating "hash values" for each of our 5-grams and then tracking which essays have those has. A _hash_ is a function that takes an input of arbitrary size and maps it to an output of fixed size (the hash value), with possible information loss. Think of using a cookie cutter to make shapes out of dough: you know the exact shape of the dough you take away, at the cost of leaving some of the dough behind.
 
 Hashes are usually designed to minimize the probability that two inputs will share the same hash value, which is called a [hash collision](https://en.wikipedia.org/wiki/Collision_resistance). If each hash number corresponds to one and only one input, it can serve as a unique identifier for that. Unfortunately, if there are more inputs than outputs, a collision is inevitable by the [pigeonhole principle](https://en.wikipedia.org/wiki/Pigeonhole_principle). Then one input would share the same hash number, and it is no longer unique.
 
-To see how that idea applies to our situation, take a look at line 21 above:
+To see how that idea applies to our situation, take a look at line 18 above:
 ```python
 if not gram in gram_to_hash
 ```
 
-Checking for the existence of a 5-gram in our growing list every time we want to add a new one is **really inefficient** (😛). If we had a hypothetical hash function to map arbitrary n-grams to integers, we could just skip this step by indexing each n-gram by its hash value. As long as we trust the unlikeliness of hash collisions, n-grams would only ever be overwritten by the same n-gram occurring later in the corpus.
+Checking for the existence of a 5-gram in our growing list every time we want to add a new one is **really inefficient** ( :^) ). If we had a hypothetical hash function to map arbitrary n-grams to integers, we could just skip this step by indexing each n-gram by its hash value. As long as we trust the unlikeliness of hash collisions, n-grams would only ever be overwritten by the same n-gram occurring later in the corpus.
 
 For this project, I chose not to implement a hash function because I can afford to be inefficient when working with such small amounts of text. **However, I'm still calling the 5-gram ID numbers hashes because I want to avoid any confusion between numbers associated with essays (IDs) and numbers associated with 5-grams (hashes).**
 
@@ -232,9 +233,9 @@ During preprocessing, we calculated the ~~word count~~ token count, just for fun
 
 To make that idea more concrete, we want phrases that are used in multiple essays to contribute the same total number of words to an overall word count as if they were only used once. Then, mathematically, a five-word phrase occurring in $$N$$ essays should contribute $$5 \cdot \frac{1}{N}$$ words to the word count.
 
-Phew, well, I know where we can find some five-word phrases - our 5-grams. We already know which essays they occur in, so the adjusted word count will be easy!
+Phew, well, I know where we can find some five-word phrases — our 5-grams. We already know which essays they occur in, so the adjusted word count will be easy!
 
-There is still one problem we have to consider. Every n-gram in the dataset overlaps with others - this is necessary to guarantee examination of all possible five-word phrases. So, we have to consider which 5-grams should "take ownership" of words that belong to multiple. We can avoid accidentally overlooking the occurrence of parts of a phrase in a document by giving the priority the phrases that occur the most, like so:
+There is still one problem we have to consider: every n-gram in the dataset overlaps with others to guarantee examination of all possible five-word phrases. So, we have to consider which 5-grams should "take ownership" of words that belong to multiple to avoid counting too many words. We can avoid accidentally overlooking the occurrence of parts of a phrase in a document by giving the priority the phrases that occur the most, like so:
 
 ![](/assets/college/Precedence.svg){: .center-image }
 
@@ -316,11 +317,11 @@ print("Does it work: " + str(does_it_work))
 
 
 
-> That's a whole a **whole** test... Don't send in the job offers all at once.
+> That's a **whole** test... Don't send in the job offers all at once.
 
 Jokes aside, tests are actually very important, and if this project weren't for fun it would need a lot more of them.
 
-This test isn't even a great one - it has a (sort-of) caveat built in:
+This test isn't even a great one — it has a (sort-of) caveat built in:
 ```python
 if essays[idx]["wordcount"] >= n
 ```
@@ -415,7 +416,7 @@ dot.render("Colleges.gv")
 
 
 <span id="carousel" />
-The [graph at the beginning of the essay](#CollegeGraph) is entertaining, but not actually very readable. I've organized and separated the Graphviz output into the images below:
+The [graph at the beginning of this post](#CollegeGraph) is entertaining, but not actually very readable. I've organized and separated the Graphviz output into the images below:
 
 <div class="owl-carousel owl-theme">
     <div class="item"><img src="/assets/college/GraphSections/Academics.svg" alt="Academics prompts."/></div>
@@ -432,12 +433,14 @@ One step in the generation of that graph is grouping essays that share seven or 
 ```python
 edges = [edge for edge, freq in edges.items() if freq > 6]
 ```
-This seems to run against the idea of selecting 5-grams in the first place. If the whole point is to pick n so that shared n-grams are meaningful, shouldn't n be set higher to _avoid_ having to group documents with multiple n-gram occurrences? Well, first off, the decision is completely arbitrary. I choose to set n on the low side to capture as much as possible besides whichever two or three-word phrases that I repeat because they fit in my style. Also, in some essays, I only copied single sentences or sentence fragments, which I consider to qualify as a shared substring but not a shared response. To me, low n values with a secondary filtering step for the graph itself seems like a better choice in the context of the entire project - phrase similarity is important for the adjusted word count, but overall essay similarity is important for the graph.
+This seems to run against the idea of selecting 5-grams in the first place. If the whole point is to pick n so that shared n-grams are meaningful, shouldn't n be set higher to _avoid_ having to group documents with multiple n-gram occurrences? Well, first off, the decision is completely arbitrary. I choose to set n on the low side to capture as much as possible besides whichever two or three-word phrases that I repeat because they fit in my style. Also, in some essays, I only copied single sentences or sentence fragments, which I consider to qualify as a shared substring but not a shared response. To me, low n values with a secondary filtering step for the graph itself seems like a better choice in the context of the entire project — phrase similarity is important for the adjusted word count, but overall essay similarity is important for the graph.
 
-I did experiment with varying n, and the only significant effect besides changing the necessity of the graph filter was in the adjusted word counts. For example, at n = 8, the total adjusted word count jumps from about 7,000 to 7,200. This makes sense: if shared phrases are required to be longer, less of them will be identified and so the measurement of unique words will increase. Overall, there is no point in attributing more than one or two significant figures to that measurement because it depends so highly on your choice of n.
+I did experiment with varying n, and the only significant effect besides changing the necessity of the graph filter was in the adjusted word counts. For example, at n = 8, the total adjusted word count jumps from about 7,000 to 7,200. This makes sense: if shared phrases are required to be longer, less of them will be identified and so the measurement of unique words will increase. Overall, there is no point in attributing more than one or two significant figures to that measurement because it depends so highly on your choice of n, but it does appear to converge between 7,000 and 7,500:
+
+![](/assets/college/wordsgraph.png)
 
 ## Conclusion
-My two main goals for this project were to calculate an adjusted word count that accounts for essay reuse and to programmatically identify prompts that I was able to answer with the same essay. My total adjusted word count is equal to approximately 7,000 words, and two main groups of prompts were identified: "describe an extracurricular" and "explain your academic experience and goals as a student" - QED. These groups are extremely specific to me as a student, but I hope the results could help give insight into the process of applying to college, especially with respect to what colleges are actually asking for from their students.
+My two main goals for this project were to calculate an adjusted word count that accounts for essay reuse and to programmatically identify prompts that I was able to answer with the same essay. My total adjusted word count is equal to approximately 7,000 words, and two main groups of prompts were identified: "describe an extracurricular" and "explain your academic experience and goals as a student" (QED). These groups are extremely specific to me as a student, but I hope the results could help give insight into the process of applying to college, especially with respect to what colleges are actually asking for from their students.
 
 If you are interested in hearing more about my experience addressing these prompts, check out [Part 2](!!!), where I'll talk about my approach to writing these essays and give tips based on this information. It will be much less technical and geared towards students preparing their own applications. I wish you all good luck! 
 

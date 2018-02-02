@@ -88,6 +88,4 @@ $('.owl-carousel').owlCarousel({
     items:1
 });
 
-$(".owl-stage-outer").css("border-width", "1px 1px 2px 1px");
-$(".owl-stage-outer").css("border-color", "black");
-$(".owl-stage-outer").css("border-style", "solid");
+$(".owl-stage-outer").css("border", "1px solid black");
