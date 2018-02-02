@@ -42,3 +42,4 @@ theme: minima
 plugins:
   - jekyll-seo-tag
   - jekyll-email-protect
+  - jekyll-feed

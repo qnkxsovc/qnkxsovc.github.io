@@ -6,7 +6,7 @@
 ---
 ## Suggestions for Writing College Essays
 
-I just finished my college applications, and from now on I'm only going to remember less and less over time about the process. I barely knew anything about it until I actually started, and there are lots of things I could have done more efficiently if I knew what to expect. In this post, I'm going to dump all my advice and warnings to help solve those problems for students after me.
+I just finished my college applications, and from now on I'm only going to remember less and less over time about the process. I barely knew anything about it until I actually started, and there are lots of things I could have done more efficiently if I had known what to expect. I'm going to dump all my advice and warnings in this post to help solve those problems for students after me.
 
 After I finished, I also did [some analysis](/2018/01/30/Suggestions-For-Writing-College-Essays.html) on my essays to find what kinds of questions my colleges were asking, and which essays I was able to reuse the most. I'm going to talk about my experience and how it relates the information I found to give tips on how to approach essay prompts and make your writing is as good as possible.
 

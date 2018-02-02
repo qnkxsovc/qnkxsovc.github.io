@@ -85,7 +85,7 @@ for essay in essays:
 id_to_idx = {e["id"]:idx for idx, e in enumerate(essays)}
 ```
 
-In this step, the data is loaded and converted to tokens with the [Natural Language Toolkit](http://www.nltk.org/)'s word_tokenize method. NLTK's tokenizer uses some advanced methods (outside this post's scope, but more info [here](http://www.nltk.org/api/nltk.tokenize.html#module-nltk.tokenize)) to split text into sentences first, and then into words. It is worth using in my opinion over (for example) splitting on spaces to avoid the edge cases that result every day English text. It would be _nice_ to have unambiguous sentence ending characters, but we don't.
+In this step, the data is loaded and converted to tokens with the [Natural Language Toolkit](http://www.nltk.org/)'s word_tokenize method. NLTK's tokenizer uses some advanced methods (outside this post's scope, but more info [here](http://www.nltk.org/api/nltk.tokenize.html#module-nltk.tokenize)) to split text into sentences first, and then into words. It is worth using in my opinion over (for example) splitting on spaces to avoid the edge cases that result from every day English text. It would be _nice_ to have unambiguous sentence ending characters, but this language is too complex to work nicely.
 
 Now, we can display some interesting information about the corpus:
 
