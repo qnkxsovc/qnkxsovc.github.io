@@ -32,7 +32,7 @@ Or, see the images [here](#carousel).
 
 This post will explain the process of building this graph from my raw essays. I also wanted to calculate an adjusted word count that would reflect the number of _unique_ words I submitted to see how many words I could actually reuse.
 
-If you are a student, I have separated my advice/experience about the application process into [another post](!!!), where I will take this information and explain how it's actually relevant. 
+If you are a student, I have separated my advice/experience about the application process into [another post](/2018/02/01/Suggestions-For-Writing-College-Essays.html), where I will take this information and explain how it's actually relevant. 
 
 ## Planning Process
 
@@ -442,7 +442,7 @@ I did experiment with varying n, and the only significant effect besides changin
 ## Conclusion
 My two main goals for this project were to calculate an adjusted word count that accounts for essay reuse and to programmatically identify prompts that I was able to answer with the same essay. My total adjusted word count is equal to approximately 7,000 words, and two main groups of prompts were identified: "describe an extracurricular" and "explain your academic experience and goals as a student" (QED). These groups are extremely specific to me as a student, but I hope the results could help give insight into the process of applying to college, especially with respect to what colleges are actually asking for from their students.
 
-If you are interested in hearing more about my experience addressing these prompts, check out [Part 2](!!!), where I'll talk about my approach to writing these essays and give tips based on this information. It will be much less technical and geared towards students preparing their own applications. I wish you all good luck! 
+If you are interested in hearing more about my experience addressing these prompts, check out [Part 2](/2018/02/01/Suggestions-For-Writing-College-Essays.html), where I'll talk about my approach to writing these essays and give tips based on this information. It will be much less technical and geared towards students preparing their own applications. I wish you all good luck! 
 
 Lastly, as I write this, almost all my applications are still in circulation, so as I wish you all luck I hope you can all reciprocate. I am nervous and excited about hearing the results.
 
