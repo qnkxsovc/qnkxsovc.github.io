@@ -419,8 +419,8 @@ dot.render("Colleges.gv")
 The [graph at the beginning of this post](#CollegeGraph) is entertaining, but not actually very readable. I've organized and separated the Graphviz output into the images below:
 
 <div class="owl-carousel owl-theme">
-    <div class="item"><img src="/assets/college/GraphSections/Academics.svg" alt="Academics prompts."/></div>
     <div class="item"><img src="/assets/college/GraphSections/ECs.svg" alt="Extracurriculars prompts."/></div>
+    <div class="item"><img src="/assets/college/GraphSections/Academics.svg" alt="Academics prompts."/></div>
     <div class="item"><img src="/assets/college/GraphSections/SmallGroups.svg" alt="Small groups of prompts."/></div>
     <div class="item"><img src="/assets/college/GraphSections/Individuals.svg" alt="Individual prompts."/></div>
 </div>
