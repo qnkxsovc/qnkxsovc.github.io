@@ -1,0 +1,168 @@
+<html>
+	<style>
+		.feature {
+			margin: 30px auto;
+			width: 80%;
+		}
+		#words {
+			display: inline-block;
+			width: 100%;
+			border: 3px solid #E4E4E4;
+			border-radius: 10px;
+			font-family: Euclid;
+		}
+		a.button {
+		  cursor: pointer;
+		  font-size: 16px;
+		  color: white;
+		  padding: 8px;
+		  border-radius: 3px;
+		  letter-spacing: 1px;
+		  font-family: sans-serif;
+		  -moz-user-select: -moz-none;
+		  -khtml-user-select: none;
+		  -webkit-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+		a.button.red {
+		  background-color: #C2324B;
+		}
+		a.button.red:hover {
+		  background-color: #AE0009;
+		}
+		a.button.blue {
+		  background-color: #1455CC;
+		}
+		a.button.blue:hover {
+		  background-color: #1000A2;
+		}
+
+		body {
+			text-align: center;
+		}
+		textarea {
+		  -webkit-appearance: none;
+		  -moz-appearance: none;
+		  appearance: none;
+		  border-radius: 10px;
+		  border: solid 3px #E4E4E4;
+		  font-size: 16px;
+		  padding: 10px;
+		  resize: none;
+		  width: 100%;
+		  height: 400px;
+		  margin: 40px auto;
+		}
+		textarea:focus {
+		  border: solid 3px #C4C4C4;
+		  outline: none;
+		}
+		textarea::placeholder {
+		  font-size: 16px;
+		}
+
+		#controls {
+			clear: both;
+			margin: 15px;
+		}
+		#controls #left-controls {
+			float: left;
+		}
+		#controls #right-controls {
+			float: right;
+		}
+		.word {
+			display: inline;
+			font-size: 30px;
+		}
+		.active {
+			display: inline;
+			font-size: 100px;
+			font-weight: bold;
+		}
+		a {
+			font-size: 16px;
+			font-family: Euclid;
+			color: black;
+		}
+	</style>
+
+	<body>
+		<div class="feature">
+			<div id="words">
+				<span class='word'>Type below and your text will appear here.</span>
+			</div>
+			<div id="controls">
+				<div id="left-controls">
+					<a class="button blue" onclick="backwards()"><</a>
+					<a class="button blue" onclick="forwards()">></a>
+				</div>
+				<div id="right-controls">
+					<a class="button blue" onclick="del()">X</a>
+				</div>
+			</div>
+			<textarea id="text" oninput='update(document.getElementById("text"), document.getElementById("words"))' placeholder="Enter text here..."></textarea>
+		</div>
+		<a href="/">Take me back...</a>
+	</body>
+	<script>
+		var idx = 0;
+		var words = [];
+		function update() {
+			textbox = document.getElementById("text");
+			if(textbox.scrollHeight > 400) {
+				textbox.style.height = "";
+				textbox.style.height = textbox.scrollHeight + "px";
+			}
+			words = textbox.value.replace( /\n/g, " " ).split(" ").filter(x => x);
+			redraw();
+		}
+		function backwards() { if(idx > 0) { idx -= 1; redraw(); } }
+		function forwards() { if(idx < (words.length - 1)) { idx += 1; redraw(); } }
+		function del() {
+			words = words.slice(0, idx).concat(words.slice(idx + 1));
+			document.getElementById("text").value = words.join(" ");
+			redraw();
+		}
+		function redraw() {
+			var display = document.getElementById("words");
+			var htmlstr = "";
+			var builder = ["<span ", "class='word active' ", "class='word' ", "> ", " </span>" ];
+			if(idx > (words.length - 1)) { idx = words.length != 0 ? words.length - 1 : 0; }
+			if(words.length == 0) {
+				htmlstr = "<span class='word'>Type below and your text will appear here.</span>";
+			}
+			else {
+				if((idx - 3) >= 0) {
+					htmlstr += (builder[0] + builder[2] + builder[3] + "..." + builder[4])
+				}
+				for (var i = 0; i < words.length; i++) {
+					if(i == idx) {
+						htmlstr += (builder[0] + builder[1] + builder[3] + words[idx] + builder[4]);
+					}
+					else if(i < (idx + 3) && i > (idx - 3)) {
+						htmlstr += (builder[0] + builder[2] + builder[3] + words[i] + builder[4]);
+					}
+				}
+				if((idx + 3) < words.length) {
+					htmlstr += (builder[0] + builder[2] + builder[3] + "..." + builder[4])
+				}
+			}
+			display.innerHTML = htmlstr;
+		}
+		document.addEventListener('keydown', function(key) {
+			if(document.activeElement != document.getElementById("text")) {
+				if(key.keyCode == 8 || key.keyCode == 88) {
+					del();
+				}
+				else if(key.keyCode == 39 || key.keyCode == 190) {
+					forwards();
+				}
+				else if (key.keyCode == 37 || key.keyCode == 188) {
+					backwards();
+				}
+			}
+		});
+	</script>
+</html>
