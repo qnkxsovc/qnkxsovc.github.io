@@ -5,11 +5,13 @@
 			width: 80%;
 		}
 		#words {
-			display: inline-block;
+			display: block;
 			width: 100%;
 			border: 3px solid #E4E4E4;
 			border-radius: 10px;
+			height: 70px;
 			font-family: Euclid;
+			overflow: hidden;
 		}
 		a.button {
 		  cursor: pointer;
@@ -74,11 +76,11 @@
 		}
 		.word {
 			display: inline;
-			font-size: 30px;
+			font-size: 20px;
 		}
 		.active {
 			display: inline;
-			font-size: 100px;
+			font-size: 50px;
 			font-weight: bold;
 		}
 		a {
@@ -91,7 +93,7 @@
 	<body>
 		<div class="feature">
 			<div id="words">
-				<span class='word'>Type below and your text will appear here.</span>
+				<span class='word' style="font-size: 50px">Add text below.</span>
 			</div>
 			<div id="controls">
 				<div id="left-controls">
