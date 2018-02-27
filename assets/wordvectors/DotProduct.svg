@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="159px" height="108px" viewBox="0 0 159 108" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-27.000000, -31.000000)">
+        <g id="Group" transform="translate(24.000000, 35.000000)">
+            <path d="M30,42 C34.7358851,43.6240316 37.7916235,46.2735022 39.1672152,49.9484118 C40.5428068,53.6233215 40.2142496,57.3071842 38.1815436,61" id="Line-4" stroke="#000000" stroke-width="2" stroke-linecap="square"></path>
+            <path d="M5,60 L85,0" id="Line" stroke="#000000" stroke-width="3" stroke-linecap="round"></path>
+            <path id="Line-decoration-1" d="M78.16,8.88 L85,0 L74.56,4.08" stroke="#000000" stroke-width="3" stroke-linecap="round"></path>
+            <path d="M88.5,1.5 L88.5,60.5" id="Line-2" stroke="#979797" stroke-linecap="square" stroke-dasharray="2,2,2"></path>
+            <path d="M6,61 L156,61" id="Line" stroke="#000000" stroke-width="3" stroke-linecap="round"></path>
+            <path id="Line-decoration-1" d="M145.2,64 L156,61 L145.2,58" stroke="#000000" stroke-width="3" stroke-linecap="round"></path>
+            <text id="150-px" font-family="Euclid" font-size="12" font-weight="normal" fill="#000000">
+                <tspan x="101.166" y="55">150 px</tspan>
+            </text>
+            <path d="M4.5,61 L88,61" id="Line-3" stroke="#FF0000" stroke-width="3" stroke-linecap="round"></path>
+            <text id="θ" font-family="Times-Roman, Times" font-size="12" font-weight="normal" fill="#000000">
+                <tspan x="29.1630859" y="56">θ</tspan>
+            </text>
+            <text id="100-px" transform="translate(32.500000, 26.000000) rotate(-37.000000) translate(-32.500000, -26.000000) " font-family="Euclid" font-size="12" font-weight="normal" fill="#000000">
+                <tspan x="15.166" y="30">100 px</tspan>
+            </text>
+            <text id="80-px" font-family="Euclid" font-size="12" font-weight="normal" fill="#FF0000">
+                <tspan x="31.666" y="73">80 px</tspan>
+            </text>
+            <text id="The-dot-product-of-t" font-family="Euclid" font-size="12" font-weight="normal" fill="#000000">
+                <tspan x="7.99" y="87">The dot product of these two </tspan>
+                <tspan x="10.588" y="101">vectors is (80)(150) = 12000</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

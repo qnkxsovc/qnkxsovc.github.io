@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="317px" height="342px" viewBox="0 0 317 342" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-59.000000, -31.000000)">
+        <g id="Group-3" transform="translate(31.000000, 32.000000)">
+            <path d="M69.5,289.5 C70.9198371,291.95987 71.4111713,294.457631 70.9740026,296.993282 C70.536834,299.528933 69.6356031,301.46726 68.2703099,302.808262" id="Line-6" stroke="#4A90E2" stroke-width="2" stroke-linecap="square"></path>
+            <path d="M42.5,303.5 L140.5,101.5" id="Line-4" stroke="#D0021B" stroke-width="3" stroke-linecap="square"></path>
+            <path id="Line-4-decoration-1" d="M138.48501,112.526324 L140.5,101.5 L133.086761,109.907371" stroke="#D0021B" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M52.6125237,282.937478 C57.3552091,282.503394 61.0031225,284.41397 63.556264,288.669206 C66.1094055,292.924442 66.1094055,297.730575 63.556264,303.087604" id="Line-5" stroke="#D0021B" stroke-width="2" stroke-linecap="square"></path>
+            <path d="M42.5,301.5 L237.5,204.5" id="Line-4" stroke="#4A90E2" stroke-width="3" stroke-linecap="square"></path>
+            <path id="Line-4-decoration-1" d="M229.166417,211.996092 L237.5,204.5 L226.494161,206.624031" stroke="#4A90E2" stroke-width="3" stroke-linecap="square"></path>
+            <g id="Group-2" transform="translate(32.000000, 0.000000)" stroke="#000000" stroke-linecap="round" stroke-width="4">
+                <g id="Group" transform="translate(9.000000, 293.000000)">
+                    <path d="M1,0 L1,20" id="Line-3"></path>
+                    <path d="M101,0 L101,20" id="Line-3"></path>
+                    <path d="M202,0 L202,20" id="Line-3"></path>
+                    <path d="M302,0 L302,20" id="Line-3"></path>
+                </g>
+                <g id="Group" transform="translate(10.500000, 152.500000) rotate(-90.000000) translate(-10.500000, -152.500000) translate(-141.500000, 142.500000)">
+                    <path d="M1,1 L1,10.5" id="Line-3"></path>
+                    <path d="M102,0 L102,20" id="Line-3"></path>
+                    <path d="M203,0 L203,20" id="Line-3"></path>
+                    <path d="M303,0 L303,20" id="Line-3"></path>
+                </g>
+                <path d="M310,303 L10,303" id="Line-2"></path>
+                <path d="M10,2 L10,302" id="Line"></path>
+            </g>
+            <text id="Equal-magnitude-and" font-family="Euclid" font-size="14" font-weight="normal" fill="#000000">
+                <tspan x="170.213" y="137">Equal </tspan>
+                <tspan x="155.737" y="154">magnitude </tspan>
+                <tspan x="148.919" y="171">and different </tspan>
+                <tspan x="158.397" y="188">directions</tspan>
+            </text>
+            <text id="Centered-around-an-o" font-family="Euclid" font-size="14" font-weight="normal" fill="#000000">
+                <tspan x="27.506" y="338">Centered around an origin point</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

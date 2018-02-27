@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="529px" height="508px" viewBox="0 0 529 508" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard-4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-69.000000, -236.000000)">
+        <g id="Group-2" transform="translate(58.000000, 231.000000)">
+            <text id="x⃗-=-(-x₁-x₂-x₃-)" font-family="Euclid" font-size="18" font-weight="normal">
+                <tspan x="250.232148" y="18.9267578" fill="#000000">x</tspan>
+                <tspan x="235" y="17.9466875" font-family="ArialUnicodeMS, Arial Unicode MS" fill="#000000">⃗ = </tspan>
+                <tspan x="280.24982" y="18.9267578" fill="#000000">(    </tspan>
+                <tspan x="311.22782" y="18.9267578" fill="#D0021B">x</tspan>
+                <tspan x="304.48893" y="17" font-family="LucidaGrande, Lucida Grande" fill="#D0021B">₁</tspan>
+                <tspan x="312.08268" y="17" font-family="LucidaGrande, Lucida Grande" fill="#000000">   </tspan>
+                <tspan x="345.411508" y="18.9267578" fill="#000000"> </tspan>
+                <tspan x="351.405508" y="18.9267578" fill="#7ED321">x</tspan>
+                <tspan x="344.666617" y="17" font-family="LucidaGrande, Lucida Grande" fill="#7ED321">₂</tspan>
+                <tspan x="368.503258" y="18.9267578" fill="#000000">   </tspan>
+                <tspan x="386.485258" y="18.9267578" fill="#4A90E2"> x</tspan>
+                <tspan x="385.740367" y="17" font-family="LucidaGrande, Lucida Grande" fill="#4A90E2">₃</tspan>
+                <tspan x="409.577008" y="18.9267578" fill="#000000">    )</tspan>
+            </text>
+            <path d="M206.5,452.5 L298.5,487.5" id="Line-17" stroke="#D0021B" stroke-width="3" stroke-linecap="round"></path>
+            <path d="M346.5,452.5 L346.5,487.5" id="Line-18" stroke="#7ED321" stroke-width="3" stroke-linecap="round"></path>
+            <path d="M481.5,451.5 L404.5,487.5" id="Line-19" stroke="#4A90E2" stroke-width="3" stroke-linecap="round"></path>
+            <g id="Group-3" transform="translate(149.000000, 238.000000)">
+                <g id="tanh" transform="translate(0.000000, 94.000000)"></g>
+                <g id="Group" transform="translate(0.000000, 99.000000)"></g>
+                <circle id="Oval" stroke="#D0021B" stroke-width="3" cx="57.5" cy="156.5" r="57.5"></circle>
+                <path d="M109.5,176.5 L4.5,176.5" id="Line" stroke="#D0021B" stroke-width="3" stroke-linecap="square"></path>
+                <text id="f(x)" font-family="Euclid-Italic, Euclid" font-size="18" font-style="italic" font-weight="normal" fill="#D0021B">
+                    <tspan x="41" y="199">f(x)</tspan>
+                </text>
+                <circle id="Oval-2" stroke="#D0021B" fill="#D0021B" cx="58" cy="99" r="5"></circle>
+                <circle id="Oval-2" stroke="#D0021B" fill="#D0021B" cx="58" cy="214" r="5"></circle>
+                <g id="tanh" transform="translate(274.000000, 94.000000)"></g>
+                <g id="Group" transform="translate(274.000000, 99.000000)"></g>
+                <circle id="Oval" stroke="#4A90E2" stroke-width="3" cx="331.5" cy="156.5" r="57.5"></circle>
+                <path d="M383.5,176.5 L278.5,176.5" id="Line" stroke="#4A90E2" stroke-width="3" stroke-linecap="square"></path>
+                <text id="f(x)" font-family="Euclid-Italic, Euclid" font-size="18" font-style="italic" font-weight="normal" fill="#4A90E2">
+                    <tspan x="315" y="199">f(x)</tspan>
+                </text>
+                <circle id="Oval-2" stroke="#4A90E2" fill="#4A90E2" cx="332" cy="99" r="5"></circle>
+                <circle id="Oval-2" stroke="#4A90E2" fill="#4A90E2" cx="332" cy="214" r="5"></circle>
+                <g id="tanh" transform="translate(139.000000, 94.000000)"></g>
+                <g id="Group" transform="translate(139.000000, 99.000000)"></g>
+                <circle id="Oval" stroke="#7ED321" stroke-width="3" cx="196.5" cy="156.5" r="57.5"></circle>
+                <path d="M248.5,176.5 L143.5,176.5" id="Line" stroke="#7ED321" stroke-width="3" stroke-linecap="square"></path>
+                <text id="f(x)" font-family="Euclid-Italic, Euclid" font-size="18" font-style="italic" font-weight="normal" fill="#7ED321">
+                    <tspan x="180" y="199">f(x)</tspan>
+                </text>
+                <circle id="Oval-2" stroke="#7ED321" fill="#7ED321" cx="197" cy="99" r="5"></circle>
+                <circle id="Oval-2" stroke="#7ED321" fill="#7ED321" cx="197" cy="214" r="5"></circle>
+                <path d="M125.5,0.5 L332.5,97.5" id="Line-4" stroke="#4A90E2" stroke-width="3" stroke-linecap="round"></path>
+                <path d="M265.5,2.5 L331.5,96.5" id="Line-10" stroke="#4A90E2" stroke-width="3" stroke-linecap="round"></path>
+                <path d="M198.5,98.5 L264.5,1.5" id="Line-8" stroke="#7ED321" stroke-width="3" stroke-linecap="round"></path>
+                <path d="M125.5,0.5 L195.5,98.5" id="Line-3" stroke="#7ED321" stroke-width="3" stroke-linecap="round"></path>
+                <path d="M59.5,97.5 L264.5,1.5" id="Line-6" stroke="#D0021B" stroke-width="3" stroke-linecap="round"></path>
+                <path d="M125.5,0.5 L57.5,97.5" id="Line-2" stroke="#D0021B" stroke-width="3" stroke-linecap="round"></path>
+            </g>
+            <g id="tanh" transform="translate(217.000000, 118.000000)">
+                <g id="Group" transform="translate(0.000000, 5.000000)" stroke="#BAB037" stroke-width="3">
+                    <circle id="Oval" cx="57.5" cy="57.5" r="57.5"></circle>
+                    <path d="M109.5,77.5 L4.5,77.5" id="Line" stroke-linecap="square"></path>
+                </g>
+                <text id="f(x)" font-family="Euclid-Italic, Euclid" font-size="18" font-style="italic" font-weight="normal" fill="#BAB037">
+                    <tspan x="41" y="105">f(x)</tspan>
+                </text>
+                <circle id="Oval-2" stroke="#BAB037" fill="#BAB037" cx="58" cy="5" r="5"></circle>
+                <circle id="Oval-2" stroke="#BAB037" fill="#BAB037" cx="58" cy="120" r="5"></circle>
+            </g>
+            <path d="M275.5,122.5 L300.5,29.5" id="Line-9" stroke="#BAB037" stroke-width="3" stroke-linecap="round"></path>
+            <path d="M275.5,121.5 L342.5,29.5" id="Line-12" stroke="#BAB037" stroke-width="3" stroke-linecap="round"></path>
+            <path d="M276.5,122.5 L381.5,29.5" id="Line-13" stroke="#BAB037" stroke-width="3" stroke-linecap="round"></path>
+            <path d="M386.5,29.5 L412.5,122.5" id="Line-14" stroke="#9013FE" stroke-width="3" stroke-linecap="round"></path>
+            <path d="M413.5,122.5 L347.5,29.5" id="Line-15" stroke="#9013FE" stroke-width="3" stroke-linecap="round"></path>
+            <path d="M305.5,29.5 L412.5,121.5" id="Line-16" stroke="#9013FE" stroke-width="3" stroke-linecap="round"></path>
+            <g id="tanh" transform="translate(356.000000, 118.000000)">
+                <g id="Group" transform="translate(0.000000, 5.000000)" stroke="#9013FE" stroke-width="3">
+                    <circle id="Oval" cx="57.5" cy="57.5" r="57.5"></circle>
+                    <path d="M109.5,77.5 L4.5,77.5" id="Line" stroke-linecap="square"></path>
+                </g>
+                <text id="f(x)" font-family="Euclid-Italic, Euclid" font-size="18" font-style="italic" font-weight="normal" fill="#9013FE">
+                    <tspan x="41" y="105">f(x)</tspan>
+                </text>
+                <circle id="Oval-2" stroke="#9013FE" fill="#9013FE" cx="58" cy="5" r="5"></circle>
+                <circle id="Oval-2" stroke="#9013FE" fill="#9013FE" cx="58" cy="120" r="5"></circle>
+            </g>
+            <text id="o⃗-=-(-o₁-o₂-o₃-)" font-family="Euclid" font-size="18" font-weight="normal">
+                <tspan x="255.232148" y="507.926758" fill="#000000">o</tspan>
+                <tspan x="240" y="506.658687" font-family="ArialUnicodeMS, Arial Unicode MS" fill="#000000">⃗ = </tspan>
+                <tspan x="284.74582" y="507.926758" fill="#000000">(    </tspan>
+                <tspan x="315.72382" y="507.926758" fill="#D0021B">o</tspan>
+                <tspan x="308.48093" y="506" font-family="LucidaGrande, Lucida Grande" fill="#D0021B">₁</tspan>
+                <tspan x="316.07468" y="506" font-family="LucidaGrande, Lucida Grande" fill="#000000">   </tspan>
+                <tspan x="349.403508" y="507.926758" fill="#000000"> </tspan>
+                <tspan x="355.397508" y="507.926758" fill="#7ED321">o</tspan>
+                <tspan x="348.154617" y="506" font-family="LucidaGrande, Lucida Grande" fill="#7ED321">₂</tspan>
+                <tspan x="371.991258" y="507.926758" fill="#000000">    </tspan>
+                <tspan x="395.967258" y="507.926758" fill="#4A90E2">o</tspan>
+                <tspan x="388.724367" y="506" font-family="LucidaGrande, Lucida Grande" fill="#4A90E2">₃</tspan>
+                <tspan x="412.561008" y="507.926758" fill="#000000">    )</tspan>
+            </text>
+            <text id="Weights-select-impor" font-family="Euclid" font-size="18" font-weight="normal" fill="#000000">
+                <tspan x="19.296" y="52">Weights select important </tspan>
+                <tspan x="34.254" y="74">input characteristics to </tspan>
+                <tspan x="14.202" y="96" font-family="Euclid-Italic, Euclid" font-style="italic">compress</tspan>
+                <tspan x="84.366" y="96"> it into a smaller </tspan>
+                <tspan x="178.416" y="118">layer</tspan>
+            </text>
+            <text id="Network-judged-by-ab" font-family="Euclid" font-size="18" font-weight="normal" fill="#000000">
+                <tspan x="41.474" y="248">Network judged by </tspan>
+                <tspan x="24.824" y="270">ability to reconstruct </tspan>
+                <tspan x="11.306" y="292">input from compressed </tspan>
+                <tspan x="79.328" y="314">representation</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

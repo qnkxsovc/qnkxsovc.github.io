@@ -1,8 +1,8 @@
 ---
   layout: post
   title: Suggestions For Writing College Essays
-  tags: 
-  categories: 
+  tags: college advice
+  categories: studentlife
 ---
 ## Suggestions for Writing College Essays
 

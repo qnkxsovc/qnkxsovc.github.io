@@ -1,8 +1,8 @@
 ---
   layout: post
   title: As If I Didn't Spend Enough Time on College
-  tags: 
-  categories: 
+  tags: college textanalysis
+  categories: projects
   addjs:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML
     - https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js
