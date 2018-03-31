@@ -8,7 +8,7 @@
 
 I just finished my college applications, and from now on I'm only going to remember less and less over time about the process. I barely knew anything about it until I actually started, and there are lots of things I could have done more efficiently if I had known what to expect. I'm going to dump all my advice and warnings in this post to help solve those problems for students after me.
 
-After I finished, I also did [some analysis](/2018/01/30/Suggestions-For-Writing-College-Essays.html) on my essays to find what kinds of questions my colleges were asking, and which essays I was able to reuse the most. I'm going to talk about my experience and how it relates the information I found to give tips on how to approach essay prompts and make your writing is as good as possible.
+After I finished, I also did [some analysis](/projects/2018/01/30/As-If-I-Didn't-Spend-Enough-Time-on-College.html) on my essays to find what kinds of questions my colleges were asking, and which essays I was able to reuse the most. I'm going to talk about my experience and how it relates the information I found to give tips on how to approach essay prompts and make your writing is as good as possible.
 
 ## General Advice
 
@@ -88,4 +88,4 @@ The leftover uncolored essays are just those essays which were completely unique
 
 The writing supplements are arguably the most influential part of your college applications. They allow you to express your personality in your applications and can help differentiate you as a candidate. I hope this post does a good job presenting the types prompts a student would see on their applications and gives some helpful tips on ways to approach them. 
 
-If you're interested in reading more about the way these graphs were generated, see [the previous post](/2018/01/30/As-If-I-Didn't-Spend-Enough-Time-on-College.html).
+If you're interested in reading more about the way these graphs were generated, see [the previous post](/projects/2018/01/30/As-If-I-Didn't-Spend-Enough-Time-on-College.html).
