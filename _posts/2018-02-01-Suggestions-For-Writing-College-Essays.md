@@ -4,7 +4,6 @@
   tags: college advice
   categories: studentlife
 ---
-## Suggestions for Writing College Essays
 
 I just finished my college applications, and from now on I'm only going to remember less and less over time about the process. I barely knew anything about it until I actually started, and there are lots of things I could have done more efficiently if I had known what to expect. I'm going to dump all my advice and warnings in this post to help solve those problems for students after me.
 

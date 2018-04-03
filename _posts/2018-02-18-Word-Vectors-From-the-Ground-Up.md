@@ -55,7 +55,7 @@ The neuron in the image above would use the following model:
 
 What makes these neurons powerful is the ability to find optimal weights to get specific outputs from specific inputs. We do this by defining an error function in terms of the network's output $$o$$ and the actual (or ideal) output $$a$$. For example, $$E(o, a) = \|o - a\|$$. Since we have already defined $$o$$ in terms of our weights, we can rewrite the error function as follows: 
 
-<span style="text-align:center;display:block">$$E(x_1, x_2, a) = \| f(x_1 w_1 + x_2 w_2 + b) - a \|$$<span>
+<span style="text-align:center;display:block">$$E(x_1, x_2, a) = \| f(x_1 w_1 + x_2 w_2 + b) - a \|$$</span>
 
 It is important to note that even though this is a function in terms of the inputs and outputs, we still have unknown variables: the parameters. Our goal is to find the parameters that **minimize** error given a specific set of inputs, so we can just substitute a set of inputs into the network and use calculus to do the minimization. This will involve taking **partial derivatives** of a multivariable function, which is actually really easy: all of the other variables are just considered to be constant. I'll walk through the minimization process step by step, replacing constant terms with $$c$$.
 
@@ -63,7 +63,7 @@ It is important to note that even though this is a function in terms of the inpu
 - Collect all parameters into a vector: $$ \vec{w} = \begin{pmatrix} w_1, & w_2, & ... & w_n \end{pmatrix} $$
 - Redefine the network in terms of our new vectors: $$o = f(\vec{x} \cdot \vec{w})$$ <br /> 
 - Now, for each of the weights, we want the rate of change of the error function with respect to that weight:
-<span style="text-align:center;display:block">$$E(\vec{w}) = \| c - f(\vec{c} \cdot \vec{ws}) \| \\ \frac{\delta E}{\delta w_i} = c f ' (cw_i + c)$$</span> <br />
+<span style="text-align:center;display:block">$$E(\vec{w}) = \| c - f(\vec{c} \cdot \vec{w}) \| \\ \frac{\delta E}{\delta w_i} = c f ' (cw_i + c)$$</span> <br />
 Note that this requires the activation function to be differentiable, and ideally the derivative is efficient to calculate.
 - In vector form, using the [gradient](http://mathworld.wolfram.com/Gradient.html): $$ \nabla E = \begin{pmatrix} \frac{\delta E}{\delta w_1}, & \frac{\delta E}{\delta w_2}, & ... & \frac{\delta E}{\delta w_n} \end{pmatrix} $$
 - Now, here's the kicker. We're going to scale the gradient down with a small positive constant $$\eta$$, which is chosen arbitrarily. Then, **we subtract the scaled error gradient from the weights. Each weight is shifted in the opposite direction of the rate of change of error for that weight.**
