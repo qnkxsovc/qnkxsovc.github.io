@@ -3,8 +3,6 @@
   title: Word Vectors, From the Ground Up
   tags: textanalysis machinelearning
   categories: concepts
-  addjs:
-    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 ---
 
 > I love them, and I want you to love them too

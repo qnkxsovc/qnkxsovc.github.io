@@ -3,8 +3,6 @@
   title: "Word2Vec Part 2: Color Vectors"
   tags: textanalysis machinelearning
   categories: projects
-  addjs:
-    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 ---
 
 In [the previous post](/concepts/2018/02/18/Word-Vectors-From-the-Ground-Up.html), I gave a hugely simplified explanation of the Word2Vec algorithm to help people who aren't familiar with neural networks understand why word vectors are important and how they are generated. I would highly recommend reading that post before this one. The goal was to explain the process _from the ground up_, but that actually becomes a difficult constraint to meet in one reasonably sized blog post. This post will explain everything I chose to leave out of the last post, especially with respect to how Word2Vec is actually implemented in practice. While it has been shown to preserve relationships between words, the inspiration of this post is the idea that the intentional distribution of colors in paintings might also have an underlying semantic structure, and the last two posts combined are intended to give all the background knowledge required for understanding and investigating the possibility of _color vectors_.
@@ -13,13 +11,13 @@ In [the previous post](/concepts/2018/02/18/Word-Vectors-From-the-Ground-Up.html
 
 The activation functions for neurons in a neural network is arguably the most important architectural characteristics of that network, and poor choices for activation functions can completely block a network from learning anything. There are many options, but one of the most common is called the [sigmoid](http://mathworld.wolfram.com/SigmoidFunction.html) function. It's very simple:
 
-<span style="text-align:center;display:block">$$S (z_i) = \frac{1}{1 + \exp(-z_i)}$$</span>
+{{raw}}<span style="text-align:center;display:block">$$S (z_i) = \frac{1}{1 + \exp(-z_i)}$$</span>{{endraw}}
 
 Technically, a sigmoid function is any function that is bounded, differentiable for all real values, and which has a non-negative derivative at each point. "The sigmoid function" generally refers to this special case, and it is a very common choice for a neural activation function because it has a "nice" derivative. Note that the bounds for this case are $$(0, 1)$$, which will be important later.
 
 For output layers, a common alternative to sigmoid functions is [softmax](https://en.wikipedia.org/wiki/Softmax_function). Softmax is frequently used as the activation function of the last layer because it guarantees that the sum of the activations of the neurons in the last layer is equal to one, allowing the network's output to serve as a probability density function. It is defined in terms of the neuron outputs $$z_1, z_2, ... z_N$$ as follows: 
 
-<span style="text-align:center;display:block">$$\sigma (z_i) = \frac{\exp(z_i)}{\sum_{k=1}^N \exp(z_k) }$$</span>
+{{raw}}<span style="text-align:center;display:block">$$\sigma (z_i) = \frac{\exp(z_i)}{\sum_{k=1}^N \exp(z_k) }$$</span>{{endraw}}
 
 This has the attractive property of attributing lots of density to comparitively large $$z_i$$ values because $$\exp(z_i)$$ becomes much greater than any of the other $$exp(z_k)$$ terms. If many $$z$$ values have the same magnitude, our probability densities get split between them fairly evenly. Softmax also satisfies the differentiability requirement for neural network activation functions, and has a suitably "nice" derivative. 
 
@@ -27,7 +25,7 @@ A network's loss function is also a hugely important architectural decision, and
 
 Instead, loss functions like [cross entropy](https://en.wikipedia.org/wiki/Cross_entropy) are more common. Cross entropy can be considered as a "distance measurement" between probability distributions. Entropy is [defined by Wikipedia](https://en.wikipedia.org/wiki/Entropy_(information_theory)) as the "average amount of information produced by a stochastic source of data." A stochastic data source just produces random events, and the "amount of information" from that source is measured as the _minimum number of bits required to describe what the random source is doing_. To find the entropy of a probability distribution is to ask, "if I use the absolute most efficient encoding scheme to transmit events from this distribution, exactly how much information would I need to transmit?" In this case, the _cross entropy_ allows you to compare two distributions by finding the average amount of information required to convey events from one distribution if, instead of the optimal encoding scheme, you used the optimal scheme from a different distribution. If those distributions are similar, the entropy is close to its minimum, but if they're different, the encoding scheme becomes inefficient and costly. Cross entropy is defined below in terms of two distributions, $$p$$ and $$q$$, and for a more detailed derivation I highly recommend [this explanation](http://colah.github.io/posts/2015-09-Visual-Information/).
 
-<span style="text-align:center;display:block">$$H(p,q) = - \sum_x p(x) \log(q(x)) $$</span>
+{{raw}}<span style="text-align:center;display:block">$$H(p,q) = - \sum_x p(x) \log(q(x)) $$</span>{{endraw}}
 
 ## Optimizations on Softmax
 Softmax is _great_, and it gets a lot of use, especially in neural networks that classify input examples into one of a few different classes. It would make sense to use when generating word vectors because the goal (for skip-gram) is to take a word's context as input and assign accurate probabilities for each of the words in the vocabulary that that word is missing from the context. It is _classifying_ context inputs into the words they're missing. Unfortunately, there is one problem with using softmax as it is described above. Word2Vec must train on a large set of text, which necessarily has a large vocabulary size. For example, the vocabulary size of all the computer science papers in ArXiv is greater than 150,000. To compute softmax _for a single class_, we have to do approximately that many exponentiations, which is extremely inefficient. To solve this problem, Word2Vec provides two main options for more efficient output probability distributions: hierarchical softmax, and negative sampling. The following discussion will be given in terms of the skip-gram model architecture, where the network uses a word to predict its context, because while one is a "reversed" version of the other, they end up with extremeley similar implementations, so that discussing them separately is redundant.
@@ -48,24 +46,27 @@ Since the overall probability of reaching a leaf node is $$1$$, this new output 
 ### Negative Sampling
 Luckily, the alternative to hierarchical softmax is much simpler. "Negative sampling" is a simplification of "Noise Contrastive Estimation," which sidesteps softmax by changing the entire goal of the network. Instead of learning the probability of context words given the input word, negative sampling incorporates a separate fake distribution $$P_n(w)$$ that spits out random words according to predefined probabilities. The network's new goal becomes taking an observed input and differentiating between a sample from the noise distribution and an actual word in the context of the observed word. For a specific word $$w_t$$, those words which are not in its context are the _negative samples_. During training, for each word we sample $$k$$ words from $$P_n(w)$$ and the network's goal is to maximize the joint probability of correctly identifying the positive and negative samples. This is where negative sampling becomes more efficient: instead of doing computations for all words in the vocabulary, we can isolate $$k+1$$ words we care about. The noise distribution should be picked to deprioritize frequent words to account for the increased likely hood they will become samples, but the overall effect is to reduce the number of redundant computations by introducing a convenient parameter that gives easy control over about how many times a word will be considered as a negative sample. Step by step, here is how we get from this idea to the formula presented in the paper.
 
-First, we have the probability distribution function our network is learning, $$P(c|w_O)$$. This gives the probability of a context word given an observed word. That's part of our goal, but the other part is identifying negative samples: $$1 - P(c|w_O)$$. Since we want to take $$k$$ samples that are all false, we must calculate the joint probability of their falsehood:
+First, we have the probability distribution function our network is learning,
+{% raw %} $$ P(c|w_O) $$ {% endraw %}. This gives the probability of a context word given an observed word. That's part of our goal, but the other part is identifying negative samples: {{raw}} $$1 - P(c|w_O)$$ {{endraw}}. Since we want to take $k$ samples that are all false, we must calculate the joint probability of their falsehood:
 
-
-<span style="text-align:center;display:block">$$\displaystyle \prod_{i=1}^k (1 - P(w_i|w_O))$$</span>
+{{raw}}<span style="text-align:center;display:block">$$\displaystyle \prod_{i=1}^k (1 - P(w_i|w_O))$$</span>{{endraw}}
 
 This works for a specific sample, but for our ideal training goal we want to maximize the [expected value](https://en.wikipedia.org/wiki/Expected_value) (read: the average) of the probability that none of the noise words in a sample are accidentally identified as context words:
 
-<span style="text-align:center;display:block">$$\displaystyle \mathbb{E}_{w_i \sim P_n(w)} \prod_{i=1}^k (1 - P(w_i|w_O)) $$</span>
+{{raw}}<span style="text-align:center;display:block">$$\displaystyle \mathbb{E}_{w_i \sim P_n(w)} \prod_{i=1}^k (1 - P(w_i|w_O)) $$</span>{{endraw}}
 
 This equation is saying "if $$w_i$$ has the distribution $$P_n(w)$$, what is the mean likelihood that five different values of $$w_i$$ are all false." There are two other tricks the authors use. First, they convert all probabilities to [log probabilities](https://en.wikipedia.org/wiki/Log_probability), which are a nice way to store floats of extremely small magnitude as negative floats with less extreme magnitudes. Additionally, a joint log probability is a _sum_, where a joint probability is a _product_, and sums can be calculated more quickly. This gives us:
 
-<span style="text-align:center;display:block">$$\displaystyle \mathbb{E}_{w_i \sim P_n(w)} \sum_{i=1}^k \log (1 - P(w_i|w_O)) $$</span>
+{{raw}}<span style="text-align:center;display:block">{{raw}} $$\displaystyle \mathbb{E}_{w_i \sim P_n(w)} \sum_{i=1}^k \log (1 - P(w_i|w_O)) $${{endraw}}</span>{{endraw}}
 
 The other trick is that the expected value of a sum is equal to the sum of expected values, so we can move the expected value operator into that sum. With our final expresssion for calculating the negative sample log probability, we can add the (log) probability of our _positive_ sample:
 
-<span style="text-align:center;display:block">$$\displaystyle log(c|w_i) + \sum_{i=1}^k \mathbb{E}_{w_i \sim P_n(w)} \log (1 - P(w_i|w_O)) $$</span>
+{{raw}}<span style="text-align:center;display:block">$$\displaystyle log(P(c | w_i)) + \sum_{i=1}^k \mathbb{E}_{w_i \sim P_n(w)} \log (1 - P(w_i | w_O)) $$</span>{{endraw}}
 
-This is the formula given in the Word2Vec paper, albeit in terms of the effective probability distribution we get from the network where the paper's formula is given in terms of the output layer parameters. I'm leaving those out because they're not required to understand the mechanics of negative sampling loss. Remember that adding the log probability $$log(c|w_i)$$ is also multiplying the probability by our average probability of $$k$$ negative samples, so overall we're maximizing the probability that our network predicts an observed context word _but not any_ unobserved context words. This brings us back to our original intuition, "taking an observed input and differentiating between a sample from the noise distribution and an actual word in the context of the observed word." 
+
+
+This is the formula given in the Word2Vec paper, albeit in terms of the effective probability distribution we get from the network where the paper's formula is given in terms of the output layer parameters. I'm leaving those out because they're not required to understand the mechanics of negative sampling loss. Remember that adding the log probability
+{{raw}}$\log(c|w_i)${{endraw}} is also multiplying the probability by our average probability of $$k$$ negative samples, so overall we're maximizing the probability that our network predicts an observed context word _but not any_ unobserved context words. This brings us back to our original intuition, "taking an observed input and differentiating between a sample from the noise distribution and an actual word in the context of the observed word." 
 
 # Applications: Color Vectors
 
