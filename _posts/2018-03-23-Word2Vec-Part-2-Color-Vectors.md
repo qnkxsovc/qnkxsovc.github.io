@@ -2,7 +2,7 @@
   layout: post
   title: "Word2Vec Part 2: Color Vectors"
   tags: textanalysis machinelearning
-  categories: projects
+  categories: concepts
 ---
 
 In [the previous post](/concepts/2018/02/18/Word-Vectors-From-the-Ground-Up.html), I gave a hugely simplified explanation of the Word2Vec algorithm to help people who aren't familiar with neural networks understand why word vectors are important and how they are generated. I would highly recommend reading that post before this one. The goal was to explain the process _from the ground up_, but that actually becomes a difficult constraint to meet in one reasonably sized blog post. This post will explain everything I chose to leave out of the last post, especially with respect to how Word2Vec is implemented in practice. While it has been shown to preserve relationships between words, the inspiration of this post is the idea that the intentional distribution of colors in paintings might also have an underlying semantic structure, and the last two posts combined are intended to give all the background knowledge required for understanding and investigating the possibility of _color vectors_.
