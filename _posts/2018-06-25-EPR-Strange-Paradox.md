@@ -28,7 +28,7 @@ The essential characteristic of a quantum system is that in many cases, there is
 
 At this point, I’d like to provide a visual abstraction that will help me explain quantum measurements. Consider some sort of arrow placed perpendicular to a surface:
 
-[[Surface.svg]]
+![](/assets/quantum/Surface.svg){: .center-image } 
 
 In this picture the arrow is fixed, but imagine an experiment in which it is allowed to fall to either the right or the left. You can recreate this experiment on the desk with a pencil. If you align your pencil perfectly, it will be difficult to predict which way the pencil would fall.
 
@@ -36,6 +36,8 @@ If, however, there is a draft in the room, or the table is slightly uneven, the 
 - When a specific state is prepared, experimental outcomes may be undeterminable.
 - However, there may be bias so that the experiment is somewhat *predictable*. 
 - Subsequent experiments will always have the same result. 
+
+![](/assets/quantum/Collapse.svg){: .center-image }
 
 For actual quantum systems, there is a mathematical framework that also captures these characteristics. We start by developing a representation of the arrow, which is “most intuitive” to describe in terms of its unambiguous states, left and right. We define two vectors, $\ket{l}$ and $\ket{r}$, using “Dirac Notation,” which is designed to allow for vector identification *without* reference to the components. These two vectors are called “kets.” The notation also makes it easy to write dot products and complex conjugations, which will become important soon.
 
@@ -73,13 +75,13 @@ So far, we’ve developed the essential notation that will be used throughout th
 
 The arrow experiment is good for developing some basic concepts, but at this point it is still a bit limited. Right now, our measurement consists of determing the probability for the arrow to end up on either the left or right, because these happen to be the two unambiguous states. These are not our only two options. Imagine taking the entire plane that the arrow is resting on and flipping *that* $90$ degrees. Now, without changing the state vector, it has become aligned to the surface. The same dropping experiment is now unabiguously “up,” even though the state vector hasn’t actually changed.
 
-[[MovingSurface.svg]]
+![](/assets/quantum/MultipleExperiments.svg){: .center-image }
 
 In any experiment, there are two ways to change the outcome. You can either change the thing you’re measuring, or change the information detected by the experiment itself. This is an example of the latter. Measuring different characteristics is key throughout physics because the only way to determine something about system for which you have no prior information is to *measure* it. In this example, there are some states for which measurement A might be definite while measurement B is completely uncertain. 
 
 Keep in mind that uncertainty in B doesn’t mean we can’t try to measure its quantity. Just like in the first iteration of the experiment, we will see one of two outcomes, and later attempts will repeat that outcome. If we go back to measuring A, the initial measurement will again be uncertain. Our state vector seems to be jumping between positions that align with A and that align with B. This is crucial: *measuring a quantum state will disrupt that state*. When a state vector of combined basis states suddenly becomes only one upon measurement, it is said to have “collapsed.” Experiments don't always collapse the state vector into a state that creates uncertainty for other experiments. In fact, some experiments may have multiple equivalent unambiguous states, where these states turn out to be *unequivalent* unambiguous states for other experiments. The picture below demonstrates this idea with $\sigma$ and $\gamma$ experiments, which both have postive and negative outcomes. 
 
-[[SimultaneousExperiments.svg]]
+![](/assets/quantum/CommutingExperiment.svg){: .center-image }
 
 Mathematically, we have to introduce new ideas to represent these experiments. We want some “experiment operator” that will act on the state vector to tell us what results we could get, how likely they are, and which unambiguous states the system might collapse to. All the information about any possible experiment should be contained between the experiment operator and the state vector. That’s a lot of information – but luckily, it fits elegantly into a mathematical construct called a “linear operator.” Since it is likely that many students will not be familiar with matrices or linear operators, I will summarize their important characteristics and explain how they can be used here. As a point of technicality, I will actually be discussing *matrix operators*, which is a distinction you can read about [here](https://www.quora.com/What-is-the-difference-between-a-matrix-and-a-linear-operator).
 
@@ -91,7 +93,7 @@ For example, the original $\ket{l}$ would be an eigenvector of the horizontal pl
 
 Finally, experiments whose results don't interfere with each other have "simultaneous eigenvectors." For example, $\sigma \ket{\sigma^+ \gamma^-} = \lambda_1 \ket{\sigma^+ \gamma^-}$, $$\gamma \ket{\sigma^+ \gamma^-} = \lambda_2 \ket{\sigma^+ \gamma^-}$, and $\sigma \gamma \ket{\sigma^+ \gamma^-} = \gamma \sigma \ket{\sigma^+ \gamma^-} = \lambda_1 \lambda_2 \ket{\sigma^+ \gamma^-}$. These equations also demonstrate why such experiments are said to "commute," whereas noncommuting experiments would collapse the state vector differently and violate the last equality. You can think of noncommuting experiments in terms of the following image: each experiment collapses the state vector into a state that is uncertain for the other experiment.
 
-[[NoncommutingExperiments.svg]]
+![](/assets/quantum/NoncommutingExperiment.svg){: .center-image }
 
 Thus, matrix operators allow us to encapsulate the three pieces of information that, along with a state vector, completely describe an experiment: 
 1. The result will be one of the eigenvalues.
@@ -101,7 +103,7 @@ Thus, matrix operators allow us to encapsulate the three pieces of information t
 ## Measurements on Two Systems
 Now that we’ve developed our experiments for single systems, we can continue to expand to “combined systems.” A combined system is exactly what it sounds like: multiple systems put together. These systems are treated as single systems with single outcomes, but this can be confusing because all results are combinations of results from the constituent systems.
 
-[[Combined Systems.svg]]
+![](/assets/quantum/EntangledSystem.svg){: .center-image }
 
 Mathematically, we combine independent quantum systems similarly to the way we combine independent joint probabilities: by multiplying them together, albeit with a very specific kind of multiplication. We have to use the [tensor product](http://mathworld.wolfram.com/VectorSpaceTensorProduct.html), which is one of the many different ways one can multiply two matrices together. This method is desirable because the tensor product of a $u$ dimensional vector and a $v$ dimensional vector has dimension $uv$. So, a tensor product of $2$-dimensional vectors $\ket{uv} = \ket{u} \otimes \ket{v}$ has $4$ dimensions. Our new four dimensional basis vectors are $\rbket{l}{r}$, $\rbket{l}{l}$, $\rbket{r}{l}$, and $\rbket{r}{r}$. We can also combine operators by taking their tensor product. If we only want to measure $\rtext{HP}$, for example, we can create a combination operator $\rtext{HP} \otimes \btext{I}$, where $\btext{I}$ is the $2 \times 2$ identity matrix. In this case, $\rtext{HP} = \btext{HP} = HP$, which is to say that the colors’ only purpose is to help us keep track of what system things correspond to. 
 
