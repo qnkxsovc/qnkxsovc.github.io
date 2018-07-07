@@ -129,8 +129,6 @@ The word count is a bit off because the tokenizer doesn't exactly split strings 
 
 ### Analysis
 
-> This is when the party starts, guys.
-
 After preprocessing, we can start analyzing the data. In this case, we're going to need to do some work to get the information we're interested in.
 
 #### N-Grams
@@ -316,8 +314,6 @@ print("Does it work: " + str(does_it_work))
 
 
 
-> That's a **whole** test... Don't send in the job offers all at once.
-
 Jokes aside, tests are actually very important, and if this project weren't for fun it would need a lot more of them.
 
 This test isn't even a great one — it has a (sort-of) caveat built in:
@@ -441,7 +437,7 @@ I did experiment with varying n, and the only significant effect besides changin
 ## Conclusion
 My two main goals for this project were to calculate an adjusted word count that accounts for essay reuse and to programmatically identify prompts that I was able to answer with the same essay. My total adjusted word count is equal to approximately 7,000 words, and two main groups of prompts were identified: "describe an extracurricular" and "explain your academic experience and goals as a student" (QED). These groups are extremely specific to me as a student, but I hope the results could help give insight into the process of applying to college, especially with respect to what colleges are actually asking for from their students.
 
-If you are interested in hearing more about my experience addressing these prompts, check out [Part 2](/2018/02/01/Suggestions-For-Writing-College-Essays.html), where I'll talk about my approach to writing these essays and give tips based on this information. It will be much less technical and geared towards students preparing their own applications. I wish you all good luck! 
+If you are interested in hearing more about my experience addressing these prompts, check out [Part 2](/studentlife/2018/02/01/Suggestions-For-Writing-College-Essays.html), where I'll talk about my approach to writing these essays and give tips based on this information. It will be much less technical and geared towards students preparing their own applications. I wish you all good luck! 
 
 Lastly, as I write this, almost all my applications are still in circulation, so as I wish you all luck I hope you can all reciprocate. I am nervous and excited about hearing the results.
 
