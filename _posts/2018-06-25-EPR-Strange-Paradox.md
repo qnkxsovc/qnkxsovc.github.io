@@ -1,7 +1,6 @@
 ---
   layout: post
-  title: EPR
-  subtitle: "The Strange Paradox of Distance and Observation"
+  title: "EPR: The Strange Paradox of Distance and Observation"
   tags: physics
   categories: concepts
 ---
@@ -154,3 +153,13 @@ Using the last equation, we can finally create a Bell inequality. Consider testi
 The crux of Bell's Theorem is that *this inequality is not true*. Experimentally, we see $0.500 \not> 0.739$. It is more likely that a photon pair get through $A$, $B$, and $C$, than it is that they only get through $A$ and $C$. Surprise! Here is the quantum explanation: Since the difference between $A$ and $B$ is $22.5^\circ$, it is $cos^2 \left( 22.5^\circ \right) = 85.4 \%$ likely for a photon passing through $A$ to pass through $B$. Similarly, if one particle passes through $B$, we know that the other would too, inducing collapse of the wave function into alignment with $B$. Then, because  $B$ and $C$ are also $22.5^\circ$ apart, it is also $85.4 \%$ likely for a photon to pass $C$. $0.739 = (0.854)(0.854)$, which is where the value comes from. 
 
 Again, this is essentially a proof by contradiction. That Bell Inequalities do not hold implies the underlying assumptions about locality and realism must also not hold. While the theorem takes aim at hidden variable theories, it only eliminates those in which the hidden variables are local. Still, these results cast doubt on some of the main assumptions we hold about the way the universe works, and it is is easy to see why many physics regard this experiment as some of the most profound in history.
+
+## Conclusion
+
+The most appropriate conclusion might just be that when things are tiny, physics is strange. I'm sure nobody started reading expecting things to make sense, but I hope that these diagrams and explanations make it a bit easier to understand. While both the EPR Paradox and Bell's Theorem are complex technical arguments about how the universe functions in extreme conditions, they arise essentially from measuring well-known characteristics of systems with only one or two particles. It is certainly impressive to gain so much insight from such simple circumstances. Since you've reached the end, thanks for your attention, and if you'd like to learn more I have some resources listed below.
+
+1. [The Theoretical Minimum](https://theoreticalminimum.com/)
+2. [QED](https://en.wikipedia.org/wiki/QED:_The_Strange_Theory_of_Light_and_Matter)
+3. [Stanford Encyclopedia of Philosophy, EPR Paradox](https://plato.stanford.edu/entries/qt-epr/)
+4. [Stanford Encyclopedia of Philosophy, Bell's Theorem](https://plato.stanford.edu/entries/bell-theorem/)
+5. [3Blue1Brown and MinutePhysics tackle Bell's Theorem](https://www.youtube.com/watch?v=zcqZHYo7ONs)
