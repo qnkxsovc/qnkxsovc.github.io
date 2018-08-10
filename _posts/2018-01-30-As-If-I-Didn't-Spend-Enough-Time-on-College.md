@@ -432,7 +432,8 @@ This seems to run against the idea of selecting 5-grams in the first place. If t
 
 I did experiment with varying n, and the only significant effect besides changing the necessity of the graph filter was in the adjusted word counts. For example, at n = 8, the total adjusted word count jumps from about 7,000 to 7,200. This makes sense: if shared phrases are required to be longer, less of them will be identified and so the measurement of unique words will increase. Overall, there is no point in attributing more than one or two significant figures to that measurement because it depends so highly on your choice of n, but it does appear to converge between 7,000 and 7,500:
 
-![](/assets/college/wordsgraph.png)
+<img src="/assets/college/wordsgraph.png" style="width:100%" alt="Individual prompts."/>
+
 
 ## Conclusion
 My two main goals for this project were to calculate an adjusted word count that accounts for essay reuse and to programmatically identify prompts that I was able to answer with the same essay. My total adjusted word count is equal to approximately 7,000 words, and two main groups of prompts were identified: "describe an extracurricular" and "explain your academic experience and goals as a student" (QED). These groups are extremely specific to me as a student, but I hope the results could help give insight into the process of applying to college, especially with respect to what colleges are actually asking for from their students.
