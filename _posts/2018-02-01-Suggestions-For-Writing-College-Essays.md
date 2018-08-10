@@ -44,7 +44,7 @@ The project itself was an event to raise awareness for technology education in m
 
 If I could pick any of my essays to do again, this would have to be it. Even though the chronological organization works well for structure, the essay was really bland, like I was a reporter documenting the event. It would have been much better if I spent more time on what the project actually meant to me, instead of listing off facts about it.
 
-So, after this essay, I would recommend other students to try to focus on their personal attachment to their extracurriculars and to save the facts about it  for their resumé. This is an example of a good opportunity to develop that cohesive identity as a student.
+So, after this essay, I would recommend other students to try to focus on their personal attachment to their extracurriculars and to save the facts about it  for their résumé. This is an example of a good opportunity to develop that cohesive identity as a student.
 
 ### "Why do you want to study that?"
 ![](/assets/college/GraphSections/Academics.svg)
