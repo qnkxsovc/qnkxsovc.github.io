@@ -8,11 +8,6 @@ $mobile-min-width: 768px;
 
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 
-@font-face {
-    font-family: Euclid;
-    src: url("Euclid Regular.ttf");
-}
-
 .dt-published {
     font-style: italic;
 }
@@ -21,7 +16,7 @@ $mobile-min-width: 768px;
 {
     margin: 30px auto;
     display: block;
-    width: 70%;
+    width: 100%;
 }
 .svg-icon {
     width: 16px;
