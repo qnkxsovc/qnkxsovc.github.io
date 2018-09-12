@@ -1,0 +1,92 @@
+
+# Problem 1
+
+Prove or disprove the following: $n^2 + n + 41$ for $n \in \mathbb{N}$ is prime. If the statement is false, provide the smallest possible failing case.
+
+## Solution
+
+The number $p = n^2 + n + 41$ is not prime if there exists a number $1 < k < p$ such that $k \mid p$. $p$ may be rewritten as $p = n(n+1) + 41$, and any $k$ that divides both $n(n+1)$ and $41$ must then divide $p$. Since $41$ is prime it is only divisible by $1$ and $41$, and since $1$ is out of valid interval for $k$, $k$ must be $41$. Solutions $n$ to $41 \mid n(n+1)$ must be integer multiples of either $n = 40$ or $n = 41$, therefore the smallest possible solution is $n = 40$.
+
+
+# Problem 2
+
+Prove or disprove the following: if an integer's last digit exists in $\{1, 3, 5, 7, 9\}$ it is odd.
+
+## Solution
+
+Let $n$ be a number and let $k \in \{1, 3, 5, 7, 9\}$ be the last digit of $n$. $n - k$ must then have the last digit zero, and therefore there is always $q \in \mathbb{Z}$ such that $n = 10q + k$. Since $k$ is odd it may be expressed as $2p + 1$. So, $n = (2)(5)(q) + (2)(p) + 1 = 2(5q + p) + 1$ must be odd.
+
+# Problem 3
+
+Prove or disprove the following: a tree of $n$ vertices must have $n-1$ edges.
+
+## Solution
+
+Lemma 1: A fully connected graph $G=(V, E)$ with $\vert V \vert = n$ must have at least $n-1$ edges.
+
+Since $G$ is fully connected, there must be simple paths from some node $v$ to all $n-1$ other nodes. Because each of these simple paths lead to different nodes, no two paths can be exactly the same, implying each path has at least one unique edge. 
+
+Node $v$ may be connected to $n-1$ nodes via $n-1$ paths, each of which must have at least $1$ unique edge. Therefore $G$ must have at least $n-1$ unique edges. 
+
+QED Lemma 1
+
+Lemma 2: If there are two unique (ie. at least one edge differs) paths $p_1 = (\{v_1, v_2\}, \ldots, \{v_{n-1}, v_n\})$ and $p_2 = (\{v_1, v_2\}, \ldots, \{v_k, v_n\})$ both connecting vertices $v_1$ and $v_n$ there must be a cycle containing $v_1$ and $v_n$.
+
+Consider $p_3$, the path from $v_n$ to $v_1$ obtained by reversing $p_2$. A cycle may be obtained by traveling from $v_1$ to $v_n$ along $p_1$ to then from $v_n$ to $v_1$ along the separate path $p_3$. 
+
+QED Lemma 2
+
+Lemma 3: For any fully connected graph $G=(V, E)$ with $\vert V \vert > n-1$ there must exist $E' \subseteq E$ such that $\vert E' \vert = n-1$ and $G' = (V, E')$ is fully connected. 
+
+Consider the construction of $G$ as follows:
+- Starting with no edges, add an edge from $E$ connecting two nodes in $G$.
+- Continue adding edges from E such that each new edge connects a new node to the connected body. 
+- If there is at least one node $v$ disconnected, it must be possible to connect some node with exactly one edge. If this node is not $v$, there would have to be at least one intermediate node adjacent to $v$ in $G$. This intermediate node would either be already connected, in which case one edge connects it to $v$, or currently disconnected, in which case this argument may be applied recursively. 
+- The graph is fully connected, so all vertices may be joined in this fashion.
+
+Since all nodes can be connected by sequential inclusion of edges, some subset of $n-1$ edges from $E$ must be sufficient to connect the vertices $V$, proving the lemma.
+
+QED Lemma 3
+
+Theorem: Let $T = (V, E)$ be a tree such that $\vert V \vert = n$. Then it must be the case that $\vert E \vert = n-1$
+
+That $T$ is fully connected implies it has at least $n-1$ edges by Lemma 1.
+
+Assume for the sake of contradiction that $\vert E \vert > n-1$. By Lemma 3, there must exist $E' \subseteq E$ such that $\vert E' \vert = n-1$ and $G' = (V, E')$ is fully connected. Consider edge $e \in E - E'$. By Lemma 2, the fully connected graph $T' = (V, E' + \{e\})$ must contain a cycle because $e$ connects two previously connected nodes with a new path. Since $(E' + \{e\}) \subseteq E$ and it is not possible for edge inclusion to break a cycle, $T = (V, E)$ must also contain a cycle. This contradicts the definition of $T$ as a tree.
+
+Therefore, it must be the case that $E - E' = \{\emptyset\}$ and that $\vert E \vert = n-1$. 
+
+QED Theorem
+
+# Problem 4
+
+
+
+Prove or disprove the following: if all nodes in a graph have even degree, it has an Eulerian cycle.
+
+
+## Solution
+[given in class]
+# Problem 5
+
+Explain why the the sum of even numbers is always even and why the parity of the sum of odd numbers is the same as the parity of the length of the sum. 
+
+## Solution
+
+A sum of even numbers must take the form $s = 2n_1 + 2n_2 + ...$. A $2$ may be factored out of the sum leaving $s = 2(n_1 + n_2 + ...)$ which must be even.
+
+A sum of an even number and an odd number $s = (2n_1) + (2n_2 + 1)$ must be odd as it can be rewritten $s = 2(n_1 + n_2) + 1$ which must be odd.
+
+A sum of $k$ odd numbers must take the form $s = (2n_1 + 1) + (2n_2 + 1) + ... + (2n_k + 1)$. This sum can be rewritten as $2(n_1 + n_2 + ...) + k$ by summing the $1$ elements from $k$ terms. $2(n_1 + n_2 + ...)$ must be even, so if $k$ is odd the sum is odd and if $k$ is even the sum is even. 
+
+# Problem 6
+
+Reformulate the handshaking lemma for multigraphs and digraphs
+
+## Solution
+
+For multigraphs, every edge either increases the degree of two nodes by one each or increases the degree of one node by two. In any case, every edge increases the sum of all degrees by two, and the standard handshake lemma holds.
+
+For digraphs, $\sum_i \text{indeg}(v_i) + \text{outdeg}(v_i) = 2\vert E \vert$, as every edge adds one to some node's in degree and adds one to another node's out degree.
+
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
