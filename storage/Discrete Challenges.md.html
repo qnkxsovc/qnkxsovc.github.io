@@ -1,26 +1,26 @@
-
-# Problem 1
+# Week 1
+## Problem 1
 
 Prove or disprove the following: $n^2 + n + 41$ for $n \in \mathbb{N}$ is prime. If the statement is false, provide the smallest possible failing case.
 
-## Solution
+### Solution
 
 The number $p = n^2 + n + 41$ is not prime if there exists a number $1 < k < p$ such that $k \mid p$. $p$ may be rewritten as $p = n(n+1) + 41$, and any $k$ that divides both $n(n+1)$ and $41$ must then divide $p$. Since $41$ is prime it is only divisible by $1$ and $41$, and since $1$ is out of valid interval for $k$, $k$ must be $41$. Solutions $n$ to $41 \mid n(n+1)$ must be integer multiples of either $n = 40$ or $n = 41$, therefore the smallest possible solution is $n = 40$.
 
 
-# Problem 2
+## Problem 2
 
 Prove or disprove the following: if an integer's last digit exists in $\{1, 3, 5, 7, 9\}$ it is odd.
 
-## Solution
+### Solution
 
 Let $n$ be a number and let $k \in \{1, 3, 5, 7, 9\}$ be the last digit of $n$. $n - k$ must then have the last digit zero, and therefore there is always $q \in \mathbb{Z}$ such that $n = 10q + k$. Since $k$ is odd it may be expressed as $2p + 1$. So, $n = (2)(5)(q) + (2)(p) + 1 = 2(5q + p) + 1$ must be odd.
 
-# Problem 3
+## Problem 3
 
 Prove or disprove the following: a tree of $n$ vertices must have $n-1$ edges.
 
-## Solution
+### Solution
 
 Lemma 1: A fully connected graph $G=(V, E)$ with $\vert V \vert = n$ must have at least $n-1$ edges.
 
@@ -58,20 +58,20 @@ Therefore, it must be the case that $E - E' = \{\emptyset\}$ and that $\vert E \
 
 QED Theorem
 
-# Problem 4
+## Problem 4
 
 
 
 Prove or disprove the following: if all nodes in a graph have even degree, it has an Eulerian cycle.
 
 
-## Solution
+### Solution
 [given in class]
-# Problem 5
+## Problem 5
 
 Explain why the the sum of even numbers is always even and why the parity of the sum of odd numbers is the same as the parity of the length of the sum. 
 
-## Solution
+### Solution
 
 A sum of even numbers must take the form $s = 2n_1 + 2n_2 + ...$. A $2$ may be factored out of the sum leaving $s = 2(n_1 + n_2 + ...)$ which must be even.
 
@@ -79,14 +79,60 @@ A sum of an even number and an odd number $s = (2n_1) + (2n_2 + 1)$ must be odd 
 
 A sum of $k$ odd numbers must take the form $s = (2n_1 + 1) + (2n_2 + 1) + ... + (2n_k + 1)$. This sum can be rewritten as $2(n_1 + n_2 + ...) + k$ by summing the $1$ elements from $k$ terms. $2(n_1 + n_2 + ...)$ must be even, so if $k$ is odd the sum is odd and if $k$ is even the sum is even. 
 
-# Problem 6
+## Problem 6
 
 Reformulate the handshaking lemma for multigraphs and digraphs
 
-## Solution
+### Solution
 
 For multigraphs, every edge either increases the degree of two nodes by one each or increases the degree of one node by two. In any case, every edge increases the sum of all degrees by two, and the standard handshake lemma holds.
 
 For digraphs, $\sum_i \text{indeg}(v_i) + \text{outdeg}(v_i) = 2\vert E \vert$, as every edge adds one to some node's in degree and adds one to another node's out degree.
+
+# Week 2
+## Problem 1
+Prove or disprove the following. The strongly connected components of a digraph, when consolidated as nodes, must always for a directed acyclic graph.
+
+## Solution
+Assume for contradiction that all strongly connected components of a digraph could be consolidated into nodes in a directed cyclic graph. Then all of the nodes in the cycle in the graph would be strongly connected, all the nodes in a directed cycle have paths to all the other nodes in the cycle. In that case, every node in the strongly connected components in the cycle would be connected to every node in the other cycles, contradicting the fact that all sccs were previously consolidated.
+
+## Problem 2
+Prove or disprove the following: if $(u, v)$ is a bridge, removing $(u, v)$ must disconnect some vertices.
+
+## Solution
+A bridge is an edge that when disconnected must increase the number of connected components. If removing $(u, v)$ doesn't disconnect any vertices, then it is not possible to have any more connected components because all vertices that had been previously connected are still connected. 
+
+## Problem 3
+Prove or disprove the following: if an edge is in a cycle, it cannot be a bridge.
+
+## Solution
+Let $e$ be any edge in a cycle. Every cycle can be rotated to start at a specific vertex $v$ in the cycle, and for any other vertex $u$ there will be a set of edges before $u$ occurs in the cycle and a set of edges afterwards. These two sets form two unique paths from $u$ to $v$, implying that every node in a cycle must have at least two paths to every other node. Therefore it is not possible to disconnect any nodes in a cycle by removing one edge, as there will always be an alternate path between any two nodes.
+
+## Problem 4
+Prove or disprove the following: if an edge is not a bridge, it is part of a cycle.
+
+## Solution
+Consider edge $e = {u, v}$. If $e$ is not a bridge, removing $e$ must not disconnect any vertices, including $u$ and $v$. Since there must be an alternate path from $u$ to $v$ such that removing $e$ doesn't disconnect them, adding $e$ back must create a cycle. 
+
+## Problem 5
+Prove or disprove the following: $(u, v)$ is a bridge iff there are two vertices with all paths through $(u, v)$. 
+
+## Solution
+If all paths between two vertices $p$ and $q$ pass through $(u, v)$ then removing $(u, v)$ must disconnect $p$ and $q$ where they were previously connected, creating an additional connected component. Since removing $(u, v)$ creates an additional connected component, $(u, v)$ must be a bridge.
+
+Furthermore, if removing an edge $e$ creates a connected component, then there must be some $p$ and $q$ with all paths connecting them passing through $e$. If no such vertices existed, removing $e$ wouldn't disconnect any vertices, contradicting its definition as a bridge.
+
+Therefore $(u, v)$ is a bridge iff there are two vertices with all paths through $(u, v)$. 
+
+## Problem 6
+Determine an algorithm to find strongly connected components.
+
+## Solution
+Perform a depth-first search on every node. If the starting node appears in the set of results, terminate the search. All nodes returned during the search must be strongly connected, as they are a part of a cycle starting and ending with the initial node in the search.
+
+## Problem 7
+I have 6 people in a graph where edges represent friendship. Then there must either be a clique of 3 or there are 3 strangers. 
+
+In graph terms, prove that in any graph there must either be a 3-complete subgraph or that three nodes aren't neighbors. 
 
 <!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
