@@ -4,4 +4,4 @@ title: Contact
 permalink: /contact
 --- 
 
-The best way to get in contact with me is via email: daniels.g [at] husky.neu.edu. If you have an interesting idea for a project and a vacancy for collaborators, please email me!
+The best way to get in contact with me is via email: daniels.g [at] husky.neu.edu.
